@@ -16,7 +16,7 @@ class Pelicula {
   int id,votoCantidad;
   bool video,adulto;
   double calificacion,popularidad;
-  String titulo,posterPath,idioma,tituloOriginal,backdropPath,argumento,lanzamiento;
+  String uniqueId,titulo,posterPath,idioma,tituloOriginal,backdropPath,argumento,lanzamiento;
   List<int> idGeneros;
 
   Pelicula({

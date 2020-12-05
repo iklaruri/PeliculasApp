@@ -63,6 +63,16 @@ class CarteleraProvider{
     return peliculas.items;
   }
 
+  Future<List<Pelicula>> buscarPelicula(String query) async{
+    final url = Uri.https(_url, '3/search/movie', {
+      'api_key':_apikey,
+      'language':_idioma,
+      'query':query
+    });
+
+    return await _obtenerRespuesta(url);
+  }
+
   Future<List<Actor>> getActores(int idPelicula) async {
     final url = Uri.https(_url, '3/movie/$idPelicula/credits', {
       'api_key':_apikey,
