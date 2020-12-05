@@ -59,6 +59,13 @@ class Pelicula {
     }else {
       return 'https://image.tmdb.org/t/p/w500/$posterPath';
     }
+  }
 
+  getBackImg(){
+    if(posterPath == null){
+      return 'https://lh3.googleusercontent.com/proxy/jgKGZ1-kzvcIQ_mBlShbjogdt9A92Ao9_5PrHKiGzNRS61aJdc942j8AL7XAMjdbbFlCnzXJZjoYke9gM32gDxMQvAoGIJmVfMAiAwEIzLTZ1gRbn5Jd0g1RzQEy4TF9n9nRel1ZXqHdgqiGlALLKj8KGAtaQSz-cqQa9iLOjj63vYapMoeXK2pA3vsTIyXwy5EI-5Y7jipYnTOWZxD6az2DZei0_81efjk9przqcpwTHl22gtqn7u6MjCc9EbY8udH6Kuwtjt88_OwSccNkGdVoH4WMqD_Lgf5zgt6j0ELSjjC_Jq_xEOBWybWMtkSRaGwo1RGDHQpKnQzCPuBZT_auMGe0ixMs5IGaBgv18Kl_--ipQnZOWbjiVfOcu9NDbKOEUedszc99i0lXgqLC28x1BWWBMTTdKoPUOIaA9UlqPVC7z7CoVK-U7lh9_zLOxi1enWCcwP_zHYYNQrt105h1No2bsc5BiD002VJQiwjkog2WLBEbfbk09cueI3TWuLgsq6dIvbhsVAtnFYZiwDIRdE83LNN2lEWv-O4gmegdkhjQ-I4-E-3qErmtPlXrjLOChPg';
+    }else {
+      return 'https://image.tmdb.org/t/p/w500/$backdropPath';
+    }
   }
 }

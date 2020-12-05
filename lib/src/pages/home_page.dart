@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:peliculas_app/src/providers/peliculas_provider.dart';
+import 'package:peliculas_app/src/providers/cartelera_provider.dart';
 import 'package:peliculas_app/src/widgets/card_swiper.dart';
 import 'package:peliculas_app/src/widgets/movie_horizontal.dart';
 
 class HomePage extends StatelessWidget {
-  final peliculasProvider = new PeliculasProvider();
+  final carteleraProvider = new CarteleraProvider();
 
   @override
   Widget build(BuildContext context) {
-    peliculasProvider.getPopulares();
+    carteleraProvider.getPopulares();
 
     return Scaffold(
       appBar: AppBar(
@@ -36,7 +36,7 @@ class HomePage extends StatelessWidget {
   Widget _swiperTarjetas() {
 
       return FutureBuilder(
-          future:  peliculasProvider.getEnCines(),
+          future:  carteleraProvider.getEnCines(),
           builder: (BuildContext context, AsyncSnapshot<List> snapshot){
             if(snapshot.hasData){
               return CardSwiper(
@@ -66,12 +66,12 @@ class HomePage extends StatelessWidget {
           SizedBox(height: 5.0),
 
           StreamBuilder(
-              stream: peliculasProvider.popularesStream,
+              stream: carteleraProvider.popularesStream,
               builder: (BuildContext context, AsyncSnapshot<List> snapshot){
                 if(snapshot.hasData){
                   return MovieHorizontal(
                     peliculas: snapshot.data,
-                    siguientePagina: peliculasProvider.getPopulares,
+                    siguientePagina: carteleraProvider.getPopulares,
                   );
                 }else{
                   return Center(child: CircularProgressIndicator());
